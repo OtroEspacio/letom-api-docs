@@ -5,7 +5,7 @@ language_tabs:
   - shell
 
 toc_footers:
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='https://github.com/lord/slate' target="_blank">Documentation Powered by Slate</a>
 
 includes:
   - errors
@@ -15,7 +15,7 @@ search: false
 
 # Introduction
 
-Welcome to the Letom API! You can use our API to access Letom API endpoints, which can get information on various cats, letoms, and breeds in our database.
+You can use our API to access Letom API endpoints, which can get information on various motels, room types, make reservations and more.
 
 # Authentication
 
@@ -43,49 +43,20 @@ You must replace <code>meowmeowmeow</code> with your API key.
 
 This is the main fragment from all requests URLs are based from.
 
+From now on, everywhere you see `{BASE_URL}` replace it with the one in the right panel.
+
 > The base URL for API version 1 is
 
 ```
 https://api-letom.herokuapp.com/v1
 ```
 
-
 # Motels
 
 ## Get All Motels
 
 ```shell
-curl "http://example.com/api/letoms"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-
-```
-
-This endpoint retrieves all letoms.
-
-### HTTP Request
-
-`GET http://example.com/api/letoms`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include letoms that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```shell
-curl "http://example.com/api/letoms/2"
+curl "{BASE_URL}/consumer/motels"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -93,25 +64,82 @@ curl "http://example.com/api/letoms/2"
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "motels": [
+    {
+      "id": 1,
+      "name": "Vásquez e Hijos",
+      "address": "Arrabal Berta Gallegos, 14 Esc. 592",
+      "email": "terrill_zulauf@hamillthiel.com",
+      "phone": "68-217-1923",
+      "profile_pic": "https://robohash.org/expeditaquivoluptates.png?size=300x300&set=set1",
+      "cover_pic": "https://robohash.org/autetmolestiae.png?size=300x300&set=set1"
+    },
+    {
+      "id": 2,
+      "name": "Pulido, Rivas y Llamas Asociados",
+      "address": "Caserio Horacio Camarillo, 2 Esc. 195",
+      "email": "hollie.purdy@reinger.info",
+      "phone": "28-009-4243",
+      "profile_pic": "https://robohash.org/placeataniminemo.png?size=300x300&set=set1",
+      "cover_pic": "https://robohash.org/inciduntbeataeimpedit.png?size=300x300&set=set1"
+    }
+  ]
 }
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+This endpoint retrieves all available letoms.
 
 ### HTTP Request
 
-`GET http://example.com/letoms/<ID>`
+`GET {BASE_URL}/consumer/motels`
+
+## Get a Specific Letom
+
+```shell
+curl "{BASE_URL}/consumer/motels/1"
+  -H "Authorization: meowmeowmeow"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "motel": {
+    "id": 1,
+    "name": "Vásquez e Hijos",
+    "address": "Arrabal Berta Gallegos, 14 Esc. 592",
+    "email": "terrill_zulauf@hamillthiel.com",
+    "phone": "68-217-1923",
+    "cover_pic": "https://robohash.org/autetmolestiae.png?size=300x300&set=set1",
+    "room_types": [
+      {
+        "id": 1,
+        "name": "chimeras",
+        "price": "1336",
+        "description": "Church-key heirloom retro dreamcatcher. Mlkshk offal mumblecore direct trade street neutra hella. Venmo gastropub asymmetrical jean shorts flexitarian sustainable twee. Austin meh meditation tacos.",
+        "cover": "https://robohash.org/autemrecusandaedoloribus.png?size=300x300&set=set1"
+      },
+      {
+        "id": 2,
+        "name": "conspirators",
+        "price": "4635",
+        "description": "Cronut chicharrones food truck vinyl skateboard intelligentsia you probably haven't heard of them. Selvage stumptown letterpress next level intelligentsia pitchfork authentic. Chartreuse irony godard. Pickled health cornhole ennui park drinking twee gastropub. Bicycle rights roof chartreuse.",
+        "cover": "https://robohash.org/optiodoloreipsa.png?size=300x300&set=set1"
+      }
+    ]
+  }
+}
+```
+
+This endpoint retrieves a specific letom and its `RoomTypes`.
+
+### HTTP Request
+
+`GET {BASE_URL}/consumer/motels/<ID>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
+ID | The ID of the letom to retrieve
 
