@@ -9,6 +9,7 @@ toc_footers:
 
 includes:
   - room_types
+  - reservations
   - errors
 
 search: false
@@ -24,7 +25,7 @@ You can use our API to access Letom API endpoints, which can get information on 
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
+curl "https://api-letom.herokuapp.com/v1"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -42,9 +43,7 @@ You must replace <code>meowmeowmeow</code> with your API key.
 
 ## Base URL
 
-This is the main fragment from all requests URLs are based from.
-
-From now on, everywhere you see `{BASE_URL}` replace it with the one in the right panel.
+This is the main fragment all requests URLs are based from.
 
 > The base URL for API version 1 is
 
@@ -57,7 +56,7 @@ https://api-letom.herokuapp.com/v1
 ## Get All Motels
 
 ```shell
-curl "{BASE_URL}/consumer/motels"
+curl "https://api-letom.herokuapp.com/v1/consumer/motels"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -92,12 +91,12 @@ This endpoint retrieves all available letoms.
 
 ### HTTP Request
 
-`GET {BASE_URL}/consumer/motels`
+`GET https://api-letom.herokuapp.com/v1/consumer/motels`
 
 ## Get a Specific Letom
 
 ```shell
-curl "{BASE_URL}/consumer/motels/1"
+curl "https://api-letom.herokuapp.com/v1/consumer/motels/1"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -136,7 +135,7 @@ This endpoint retrieves a specific letom and its `RoomTypes`.
 
 ### HTTP Request
 
-`GET {BASE_URL}/consumer/motels/<ID>`
+`GET https://api-letom.herokuapp.com/v1/consumer/motels/<ID>`
 
 ### URL Parameters
 
