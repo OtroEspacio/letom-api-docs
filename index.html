@@ -122,8 +122,9 @@
 <p>To authorize, use this code:</p>
 </blockquote>
 <pre class="highlight shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
+curl <span class="s2">"https://api-letom.herokuapp.com/v1"</span>
   -H <span class="s2">"Authorization: meowmeowmeow"</span>
+  -H <span class="s2">"Accept: application/vnd.letom.v1"</span>
 </code></pre>
 
 <blockquote>
@@ -142,9 +143,7 @@ You must replace <code>meowmeowmeow</code> with your API key.
 
 <h2 id="base-url">Base URL</h2>
 
-<p>This is the main fragment from all requests URLs are based from.</p>
-
-<p>From now on, everywhere you see <code class="prettyprint">{BASE_URL}</code> replace it with the one in the right panel.</p>
+<p>This is the main fragment all requests URLs are based from.</p>
 
 <blockquote>
 <p>The base URL for API version 1 is</p>
@@ -152,11 +151,36 @@ You must replace <code>meowmeowmeow</code> with your API key.
 <pre class="highlight plaintext"><code>https://api-letom.herokuapp.com/v1
 </code></pre>
 
-<h1 id="motels">Motels</h1>
+          <h1 id="errors">Errors</h1>
+
+<p>The Letom API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>401</td>
+<td>Unauthorized &ndash; Your API key is wrong</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found &ndash; The specified kitten could not be found</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+</tr>
+</tbody></table>
+
+          <h1 id="motels">Motels</h1>
 
 <h2 id="get-all-motels">Get All Motels</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"{BASE_URL}/consumer/motels"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api-letom.herokuapp.com/v1/consumer/motels"</span>
   -H <span class="s2">"Authorization: meowmeowmeow"</span>
+  -H <span class="s2">"Accept: application/vnd.letom.v1"</span>
 </code></pre>
 
 <blockquote>
@@ -190,11 +214,12 @@ You must replace <code>meowmeowmeow</code> with your API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET {BASE_URL}/consumer/motels</code></p>
+<p><code class="prettyprint">GET https://api-letom.herokuapp.com/v1/consumer/motels</code></p>
 
 <h2 id="get-a-specific-letom">Get a Specific Letom</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"{BASE_URL}/consumer/motels/1"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api-letom.herokuapp.com/v1/consumer/motels/1"</span>
   -H <span class="s2">"Authorization: meowmeowmeow"</span>
+  -H <span class="s2">"Accept: application/vnd.letom.v1"</span>
 </code></pre>
 
 <blockquote>
@@ -232,7 +257,7 @@ You must replace <code>meowmeowmeow</code> with your API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET {BASE_URL}/consumer/motels/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET https://api-letom.herokuapp.com/v1/consumer/motels/&lt;ID&gt;</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -251,8 +276,9 @@ You must replace <code>meowmeowmeow</code> with your API key.
           <h1 id="room-types">Room Types</h1>
 
 <h2 id="get-a-specific-room-type">Get a Specific Room Type</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"{BASE_URL}/consumer/room_types/1"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api-letom.herokuapp.com/v1/consumer/room_types/1"</span>
   -H <span class="s2">"Authorization: meowmeowmeow"</span>
+  -H <span class="s2">"Accept: application/vnd.letom.v1"</span>
 </code></pre>
 
 <blockquote>
@@ -260,7 +286,7 @@ You must replace <code>meowmeowmeow</code> with your API key.
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"room_type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishes"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5556"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Swag cred pabst yuccie literally 8-bit kombucha. Umami health whatever jean shorts keffiyeh chicharrones. Scenester vegan normcore disrupt small batch tofu sustainable. Humblebrag pop-up franzen."</span><span class="p">,</span><span class="w">
@@ -283,7 +309,7 @@ You must replace <code>meowmeowmeow</code> with your API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET &quot;{BASE_URL}/consumer/room_types/&lt;ID&gt;&quot;</code></p>
+<p><code class="prettyprint">GET &quot;https://api-letom.herokuapp.com/v1/consumer/room_types/&lt;ID&gt;&quot;</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -299,27 +325,229 @@ You must replace <code>meowmeowmeow</code> with your API key.
 </tr>
 </tbody></table>
 
-          <h1 id="errors">Errors</h1>
+          <h1 id="reservations">Reservations</h1>
 
-<p>The Letom API uses the following error codes:</p>
+<h2 id="get-a-consumer-39-s-reservations">Get a Consumer&rsquo;s Reservations</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api-letom.herokuapp.com/v1/consumer/reservations/?email=someemail@address.com"</span>
+  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+  -H <span class="s2">"Accept: application/vnd.letom.v1"</span>
+</code></pre>
+
+<blockquote>
+<p>The above request returns a JSON structured in following manner:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"reservations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"canceled"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"date_requested"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12 de 09"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"motel_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vásquez e Hijos"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"room"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"giants"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cold-pressed narwhal post-ironic mixtape asymmetrical thundercats put a bird on it. Intelligentsia gluten-free put a bird on it. Ethical gluten-free fingerstache bitters diy. Microdosing messenger bag chicharrones skateboard post-ironic pitchfork."</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"canceled"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"date_requested"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02 de 10"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"motel_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vásquez e Hijos"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"room"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"worshipers"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Offal swag vice put a bird on it bespoke. 3 wolf moon paleo squid bitters direct trade intelligentsia flannel vegan. Gluten-free sartorial tattooed blog. Trust fund try-hard swag aesthetic humblebrag blog brooklyn yolo."</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Get a consumer&rsquo;s all reservations made in Letom. The reservation includes the room type reserved.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET &quot;https://api-letom.herokuapp.com/v1/consumer/reservations/?email=&lt;CONSUMER-EMAIL-ADDRESS&gt;&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
 
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th>Parameter</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>401</td>
-<td>Unauthorized &ndash; Your API key is wrong</td>
+<td>email</td>
+<td>The email address of the current consumer</td>
+</tr>
+</tbody></table>
+
+<h2 id="create-a-reservation">Create a Reservation</h2>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"https://api-letom.herokuapp.com/v1/consumer/reservations"</span>
+  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+  -H <span class="s2">"Accept: application/vnd.letom.v1"</span>
+  -d <span class="s1">'{ "reservation": {
+        "room_type_id": 5,
+        "email": "c2@email.com" }
+      }'</span>
+</code></pre>
+
+<blockquote>
+<p>The previous POST request creates a reservations and returns a JSON like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"reservation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"consumer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c2@email.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"room"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"worshipers"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reserva completada"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint creates a reservation for the current user. The resulting JSON gives information about the reservation&rsquo;s status, additional data of the consumer and the room type and a custom success message.</p>
+
+<aside class="notice">Users can only make reservations as long as they do not have any reservations with a pending status.</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://api-letom.herokuapp.com/v1/consumer/reservations/</code></p>
+
+<h3 id="request-parameters">Request Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>reservation (<em>hash</em>)</td>
+<td>A hash containing the <code class="prettyprint">room_type_id</code> and the <code class="prettyprint">email</code> for creating the reservation</td>
 </tr>
 <tr>
-<td>404</td>
-<td>Not Found &ndash; The specified kitten could not be found</td>
+<td>room_type_id (<em>integer</em>)</td>
+<td>The ID of the room type to be reserved</td>
 </tr>
 <tr>
-<td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+<td>email (<em>string</em>)</td>
+<td>The current user&rsquo;s email address</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-last-user-39-s-reservation">Get Last User&rsquo;s Reservation</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api-letom.herokuapp.com/v1/consumer/reservations/last/?email=someemail@address.com"</span>
+  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+  -H <span class="s2">"Accept: application/vnd.letom.v1"</span>
+</code></pre>
+
+<blockquote>
+<p>The previoous request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"reservation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"consumer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c2@email.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"room"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"worshipers"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Get the current user&rsquo;s last reservation. The reservation includes the room type reserved and the user&rsquo;s data.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET &quot;https://api-letom.herokuapp.com/v1/consumer/reservations/last/?email=&lt;CONSUMER-EMAIL-ADDRESS&gt;&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email (<em>string</em>)</td>
+<td>The email address of the current consumer</td>
+</tr>
+</tbody></table>
+
+<h2 id="cancel-a-reservation">Cancel a Reservation</h2>
+<pre class="highlight shell"><code>curl -X PUT <span class="s2">"https://api-letom.herokuapp.com/v1/consumer/reservations/?email=someemail@address.com"</span>
+  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+  -H <span class="s2">"Accept: application/vnd.letom.v1"</span>
+</code></pre>
+
+<blockquote>
+<p>The above request returns a JSON structured in following manner:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"reservation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"canceled"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"consumer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c2@email.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"device_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"room"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"worshipers"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint finds and cancels the most recent pending reservation a user has made.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT &quot;https://api-letom.herokuapp.com/v1/consumer/reservations/cancel/?email=&lt;CONSUMER-EMAIL-ADDRESS&gt;&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email (<em>string</em>)</td>
+<td>The email address of the current consumer</td>
 </tr>
 </tbody></table>
 
