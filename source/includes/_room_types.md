@@ -12,7 +12,7 @@ curl "{BASE_URL}/consumer/room_types/1"
 ```json
 {
   "room_type": {
-    "id": 5,
+    "id": 1,
     "name": "fishes",
     "price": "5556",
     "description": "Swag cred pabst yuccie literally 8-bit kombucha. Umami health whatever jean shorts keffiyeh chicharrones. Scenester vegan normcore disrupt small batch tofu sustainable. Humblebrag pop-up franzen.",
