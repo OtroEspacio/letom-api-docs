@@ -12,6 +12,7 @@ includes:
   - motels
   - room_types
   - reservations
+  - consumers
 
 search: false
 ---
