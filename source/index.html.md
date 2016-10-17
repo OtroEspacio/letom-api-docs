@@ -8,6 +8,7 @@ toc_footers:
   - <a href='https://github.com/lord/slate' target="_blank">Documentation Powered by Slate</a>
 
 includes:
+  - room_types
   - errors
 
 search: false
