@@ -27,6 +27,7 @@ You can use our API to access Letom API endpoints, which can get information on 
 # With shell, you can just pass the correct header with each request
 curl "https://api-letom.herokuapp.com/v1"
   -H "Authorization: meowmeowmeow"
+  -H "Accept: application/vnd.letom.v1"
 ```
 
 > Make sure to replace `meowmeowmeow` with your API key.
@@ -58,6 +59,7 @@ https://api-letom.herokuapp.com/v1
 ```shell
 curl "https://api-letom.herokuapp.com/v1/consumer/motels"
   -H "Authorization: meowmeowmeow"
+  -H "Accept: application/vnd.letom.v1"
 ```
 
 > The above command returns JSON structured like this:
@@ -98,6 +100,7 @@ This endpoint retrieves all available letoms.
 ```shell
 curl "https://api-letom.herokuapp.com/v1/consumer/motels/1"
   -H "Authorization: meowmeowmeow"
+  -H "Accept: application/vnd.letom.v1"
 ```
 
 > The above command returns JSON structured like this:

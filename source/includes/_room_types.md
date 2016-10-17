@@ -5,6 +5,7 @@
 ```shell
 curl "https://api-letom.herokuapp.com/v1/consumer/room_types/1"
   -H "Authorization: meowmeowmeow"
+  -H "Accept: application/vnd.letom.v1"
 ```
 
 > The above request returns a JSON structured like this:
