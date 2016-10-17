@@ -15,7 +15,7 @@ search: false
 
 # Introduction
 
-Welcome to the Letom API! You can use our API to access Letom API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Letom API! You can use our API to access Letom API endpoints, which can get information on various cats, letoms, and breeds in our database.
 
 # Authentication
 
@@ -29,58 +29,54 @@ curl "api_endpoint_here"
 
 > Make sure to replace `meowmeowmeow` with your API key.
 
-Kittn uses API keys to allow access to the API.
+Letom uses API keys to allow access to the API.
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+Letom expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: meowmeowmeow`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>meowmeowmeow</code> with your API key.
 </aside>
 
-# Kittens
+## Base URL
 
-## Get All Kittens
+This is the main fragment from all requests URLs are based from.
+
+> The base URL for API version 1 is
+
+```
+https://api-letom.herokuapp.com/v1
+```
+
+
+# Motels
+
+## Get All Motels
 
 ```shell
-curl "http://example.com/api/kittens"
+curl "http://example.com/api/letoms"
   -H "Authorization: meowmeowmeow"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves all letoms.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET http://example.com/api/letoms`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+available | true | If set to false, the result will include letoms that have already been adopted.
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
@@ -89,7 +85,7 @@ Remember — a happy kitten is an authenticated kitten!
 ## Get a Specific Kitten
 
 ```shell
-curl "http://example.com/api/kittens/2"
+curl "http://example.com/api/letoms/2"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -111,7 +107,7 @@ This endpoint retrieves a specific kitten.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET http://example.com/letoms/<ID>`
 
 ### URL Parameters
 
