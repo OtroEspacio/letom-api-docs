@@ -248,6 +248,57 @@ You must replace <code>meowmeowmeow</code> with your API key.
 </tr>
 </tbody></table>
 
+          <h1 id="room-types">Room Types</h1>
+
+<h2 id="get-a-specific-room-type">Get a Specific Room Type</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"{BASE_URL}/consumer/room_types/1"</span>
+  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+</code></pre>
+
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"room_type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fishes"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5556"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Swag cred pabst yuccie literally 8-bit kombucha. Umami health whatever jean shorts keffiyeh chicharrones. Scenester vegan normcore disrupt small batch tofu sustainable. Humblebrag pop-up franzen."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"available_rooms"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"room_type_pictures"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"pic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://robohash.org/asperiorespariaturmagni.png?size=300x300&amp;set=set1"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"pic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://robohash.org/autdignissimosnihil.png?size=300x300&amp;set=set1"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Get the information of a room type and all its pictures.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET &quot;{BASE_URL}/consumer/room_types/&lt;ID&gt;&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the room type to retrieve</td>
+</tr>
+</tbody></table>
+
           <h1 id="errors">Errors</h1>
 
 <p>The Letom API uses the following error codes:</p>
