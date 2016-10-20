@@ -49,7 +49,7 @@ Get a consumer's all reservations made in Letom. The reservation includes the ro
 
 Parameter | Description
 --------- | -----------
-email | The email address of the current consumer
+email (*string*)| The email address of the current consumer
 
 
 ## Create a Reservation
