@@ -119,7 +119,7 @@
 <h1 id="authentication">Authentication</h1>
 
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>To authorize, you must send an <code class="prettyprint">Authorization</code> header containing a valid <code class="prettyprint">access_token</code> in your request as in the following piece of code:</p>
 </blockquote>
 <pre class="highlight shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"https://api-letom.herokuapp.com/v1"</span>
@@ -128,18 +128,26 @@ curl <span class="s2">"https://api-letom.herokuapp.com/v1"</span>
 </code></pre>
 
 <blockquote>
-<p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
+<p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your access token.</p>
 </blockquote>
 
-<p>Letom uses API keys to allow access to the API.</p>
+<p>Letom uses access tokens to allow access to the API.</p>
 
-<p>Letom expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>Letom expects for the access tokens to be included in all API requests to the server in a header that looks like the following:</p>
 
 <p><code class="prettyprint">Authorization: meowmeowmeow</code></p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your API key.
+You must replace <code>meowmeowmeow</code> with your access token.
 </aside>
+
+<blockquote>
+<p>If you do not send a valid <code class="prettyprint">Authorization</code> header you&rsquo;ll get a <code class="prettyprint">not_authenticated</code> error message:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"errors"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not authenticated"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h2 id="base-url">Base URL</h2>
 
@@ -163,7 +171,7 @@ You must replace <code>meowmeowmeow</code> with your API key.
 </thead><tbody>
 <tr>
 <td>401</td>
-<td>Unauthorized &ndash; Your API key is wrong</td>
+<td>Unauthorized &ndash; Your access token is invalid</td>
 </tr>
 <tr>
 <td>404</td>
@@ -171,7 +179,7 @@ You must replace <code>meowmeowmeow</code> with your API key.
 </tr>
 <tr>
 <td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+<td>Internal Server Error &ndash; We had a problem with our server. Try again later</td>
 </tr>
 </tbody></table>
 
