@@ -23,7 +23,7 @@ You can use our API to access Letom API endpoints, which can get information on 
 
 # Authentication
 
-> To authorize, use this code:
+> To authorize, you must send an `Authorization` header containing a valid `access_token` in your request as in the following piece of code:
 
 ```shell
 # With shell, you can just pass the correct header with each request
@@ -32,17 +32,25 @@ curl "https://api-letom.herokuapp.com/v1"
   -H "Accept: application/vnd.letom.v1"
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> Make sure to replace `meowmeowmeow` with your access token.
 
-Letom uses API keys to allow access to the API.
+Letom uses access tokens to allow access to the API.
 
-Letom expects for the API key to be included in all API requests to the server in a header that looks like the following:
+Letom expects for the access tokens to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: meowmeowmeow`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your API key.
+You must replace <code>meowmeowmeow</code> with your access token.
 </aside>
+
+> If you do not send a valid `Authorization` header you'll get a `not_authenticated` error message:
+
+```json
+{
+  "errors": "Not authenticated"
+}
+```
 
 ## Base URL
 
