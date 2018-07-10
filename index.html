@@ -123,22 +123,22 @@
 </blockquote>
 <pre class="highlight shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"https://api-letom.herokuapp.com/v1"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+  -H <span class="s2">"Authorization: SUPER-COOL-ACCESS-TOKEN"</span>
   -H <span class="s2">"Accept: application/vnd.letom.v1"</span>
 </code></pre>
 
 <blockquote>
-<p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your access token.</p>
+<p>Make sure to replace <code class="prettyprint">SUPER-COOL-ACCESS-TOKEN</code> with <em>your</em> access token.</p>
 </blockquote>
 
 <p>Letom uses access tokens to allow access to the API.</p>
 
 <p>Letom expects for the access tokens to be included in all API requests to the server in a header that looks like the following:</p>
 
-<p><code class="prettyprint">Authorization: meowmeowmeow</code></p>
+<p><code class="prettyprint">Authorization: SUPER-COOL-ACCESS-TOKEN</code></p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your access token.
+You must replace <code>SUPER-COOL-ACCESS-TOKEN</code> with _your_ access token.
 </aside>
 
 <blockquote>
@@ -156,8 +156,12 @@ You must replace <code>meowmeowmeow</code> with your access token.
 <blockquote>
 <p>The base URL for API version 1 is</p>
 </blockquote>
-<pre class="highlight plaintext"><code>https://api-letom.herokuapp.com/v1
+<pre class="highlight plaintext"><code>https://letom-st.herokuapp.com/v1
 </code></pre>
+
+<h3 id="note-on-base-url">Note on Base URL</h3>
+
+<p>This project API is intended to have a custom subdomain <code class="prettyprint">api</code> however, when this is deployed to Heroku in the free tier, it is not possible because the platform already provides a subdomain.</p>
 
           <h1 id="errors">Errors</h1>
 
@@ -186,8 +190,8 @@ You must replace <code>meowmeowmeow</code> with your access token.
           <h1 id="motels">Motels</h1>
 
 <h2 id="get-all-motels">Get All Motels</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api-letom.herokuapp.com/v1/consumer/motels"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://letom-st.herokuapp.com/v1/consumer/motels"</span>
+  -H <span class="s2">"Authorization: SUPER-COOL-ACCESS-TOKEN"</span>
   -H <span class="s2">"Accept: application/vnd.letom.v1"</span>
 </code></pre>
 
@@ -222,11 +226,11 @@ You must replace <code>meowmeowmeow</code> with your access token.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api-letom.herokuapp.com/v1/consumer/motels</code></p>
+<p><code class="prettyprint">GET https://letom-st.herokuapp.com/v1/consumer/motels</code></p>
 
 <h2 id="get-a-specific-letom">Get a Specific Letom</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api-letom.herokuapp.com/v1/consumer/motels/1"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://letom-st.herokuapp.com/v1/consumer/motels/1"</span>
+  -H <span class="s2">"Authorization: SUPER-COOL-ACCESS-TOKEN"</span>
   -H <span class="s2">"Accept: application/vnd.letom.v1"</span>
 </code></pre>
 
@@ -265,7 +269,7 @@ You must replace <code>meowmeowmeow</code> with your access token.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api-letom.herokuapp.com/v1/consumer/motels/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET https://letom-st.herokuapp.com/v1/consumer/motels/&lt;ID&gt;</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -284,8 +288,8 @@ You must replace <code>meowmeowmeow</code> with your access token.
           <h1 id="room-types">Room Types</h1>
 
 <h2 id="get-a-specific-room-type">Get a Specific Room Type</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api-letom.herokuapp.com/v1/consumer/room_types/1"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://letom-st.herokuapp.com/v1/consumer/room_types/1"</span>
+  -H <span class="s2">"Authorization: SUPER-COOL-ACCESS-TOKEN"</span>
   -H <span class="s2">"Accept: application/vnd.letom.v1"</span>
 </code></pre>
 
@@ -317,7 +321,7 @@ You must replace <code>meowmeowmeow</code> with your access token.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET &quot;https://api-letom.herokuapp.com/v1/consumer/room_types/&lt;ID&gt;&quot;</code></p>
+<p><code class="prettyprint">GET &quot;https://letom-st.herokuapp.com/v1/consumer/room_types/&lt;ID&gt;&quot;</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -336,8 +340,8 @@ You must replace <code>meowmeowmeow</code> with your access token.
           <h1 id="reservations">Reservations</h1>
 
 <h2 id="get-a-consumer-39-s-reservations">Get a Consumer&rsquo;s Reservations</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api-letom.herokuapp.com/v1/consumer/reservations/?email=someemail@address.com"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://letom-st.herokuapp.com/v1/consumer/reservations/?email=someemail@address.com"</span>
+  -H <span class="s2">"Authorization: SUPER-COOL-ACCESS-TOKEN"</span>
   -H <span class="s2">"Accept: application/vnd.letom.v1"</span>
 </code></pre>
 
@@ -376,7 +380,7 @@ You must replace <code>meowmeowmeow</code> with your access token.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET &quot;https://api-letom.herokuapp.com/v1/consumer/reservations/?email=&lt;CONSUMER-EMAIL-ADDRESS&gt;&quot;</code></p>
+<p><code class="prettyprint">GET &quot;https://letom-st.herokuapp.com/v1/consumer/reservations/?email=&lt;CONSUMER-EMAIL-ADDRESS&gt;&quot;</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -393,8 +397,8 @@ You must replace <code>meowmeowmeow</code> with your access token.
 </tbody></table>
 
 <h2 id="create-a-reservation">Create a Reservation</h2>
-<pre class="highlight shell"><code>curl -X POST <span class="s2">"https://api-letom.herokuapp.com/v1/consumer/reservations"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"https://letom-st.herokuapp.com/v1/consumer/reservations"</span>
+  -H <span class="s2">"Authorization: SUPER-COOL-ACCESS-TOKEN"</span>
   -H <span class="s2">"Accept: application/vnd.letom.v1"</span>
   -d <span class="s1">'{ "reservation": {
         "room_type_id": 5,
@@ -435,7 +439,7 @@ You must replace <code>meowmeowmeow</code> with your access token.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://api-letom.herokuapp.com/v1/consumer/reservations/</code></p>
+<p><code class="prettyprint">POST https://letom-st.herokuapp.com/v1/consumer/reservations/</code></p>
 
 <h3 id="request-parameters">Request Parameters</h3>
 
@@ -460,8 +464,8 @@ You must replace <code>meowmeowmeow</code> with your access token.
 </tbody></table>
 
 <h2 id="get-last-user-39-s-reservation">Get Last User&rsquo;s Reservation</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api-letom.herokuapp.com/v1/consumer/reservations/last/?email=someemail@address.com"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://letom-st.herokuapp.com/v1/consumer/reservations/last/?email=someemail@address.com"</span>
+  -H <span class="s2">"Authorization: SUPER-COOL-ACCESS-TOKEN"</span>
   -H <span class="s2">"Accept: application/vnd.letom.v1"</span>
 </code></pre>
 
@@ -493,7 +497,7 @@ You must replace <code>meowmeowmeow</code> with your access token.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET &quot;https://api-letom.herokuapp.com/v1/consumer/reservations/last/?email=&lt;CONSUMER-EMAIL-ADDRESS&gt;&quot;</code></p>
+<p><code class="prettyprint">GET &quot;https://letom-st.herokuapp.com/v1/consumer/reservations/last/?email=&lt;CONSUMER-EMAIL-ADDRESS&gt;&quot;</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -510,8 +514,8 @@ You must replace <code>meowmeowmeow</code> with your access token.
 </tbody></table>
 
 <h2 id="cancel-a-reservation">Cancel a Reservation</h2>
-<pre class="highlight shell"><code>curl -X PUT <span class="s2">"https://api-letom.herokuapp.com/v1/consumer/reservations/?email=someemail@address.com"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+<pre class="highlight shell"><code>curl -X PUT <span class="s2">"https://letom-st.herokuapp.com/v1/consumer/reservations/?email=someemail@address.com"</span>
+  -H <span class="s2">"Authorization: SUPER-COOL-ACCESS-TOKEN"</span>
   -H <span class="s2">"Accept: application/vnd.letom.v1"</span>
 </code></pre>
 
@@ -543,7 +547,7 @@ You must replace <code>meowmeowmeow</code> with your access token.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT &quot;https://api-letom.herokuapp.com/v1/consumer/reservations/cancel/?email=&lt;CONSUMER-EMAIL-ADDRESS&gt;&quot;</code></p>
+<p><code class="prettyprint">PUT &quot;https://letom-st.herokuapp.com/v1/consumer/reservations/cancel/?email=&lt;CONSUMER-EMAIL-ADDRESS&gt;&quot;</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -562,11 +566,11 @@ You must replace <code>meowmeowmeow</code> with your access token.
           <h1 id="consumers">Consumers</h1>
 
 <h2 id="create-consumer">Create Consumer</h2>
-<pre class="highlight shell"><code>curl -X POST <span class="s2">"https://api-letom.herokuapp.com/v1/consumer/consumers"</span>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"https://letom-st.herokuapp.com/v1/consumer/consumers"</span>
   -H <span class="s2">"Authorization: meowmeowmeow"</span>
   -H <span class="s2">"Accept: application/vnd.letom.v1"</span>
   -d <span class="s1">'{ "consumer": {
-        "device_id": "somerandomstring" }
+        "device_id": "somedeviceidstring" }
       }'</span>
 </code></pre>
 
@@ -588,7 +592,7 @@ You must replace <code>meowmeowmeow</code> with your access token.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST &quot;https://api-letom.herokuapp.com/v1/consumer/consumers&quot;</code></p>
+<p><code class="prettyprint">POST &quot;https://letom-st.herokuapp.com/v1/consumer/consumers&quot;</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
