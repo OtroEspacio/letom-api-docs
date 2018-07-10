@@ -3,8 +3,8 @@
 ## Get a Specific Room Type
 
 ```shell
-curl "https://api-letom.herokuapp.com/v1/consumer/room_types/1"
-  -H "Authorization: meowmeowmeow"
+curl "https://letom-st.herokuapp.com/v1/consumer/room_types/1"
+  -H "Authorization: SUPER-COOL-ACCESS-TOKEN"
   -H "Accept: application/vnd.letom.v1"
 ```
 
@@ -36,7 +36,7 @@ Get the information of a room type and all its pictures.
 
 ### HTTP Request
 
-`GET "https://api-letom.herokuapp.com/v1/consumer/room_types/<ID>"`
+`GET "https://letom-st.herokuapp.com/v1/consumer/room_types/<ID>"`
 
 ### URL Parameters
 

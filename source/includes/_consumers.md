@@ -3,11 +3,11 @@
 ## Create Consumer
 
 ```shell
-curl -X POST "https://api-letom.herokuapp.com/v1/consumer/consumers"
+curl -X POST "https://letom-st.herokuapp.com/v1/consumer/consumers"
   -H "Authorization: meowmeowmeow"
   -H "Accept: application/vnd.letom.v1"
   -d '{ "consumer": {
-        "device_id": "somerandomstring" }
+        "device_id": "somedeviceidstring" }
       }'
 ```
 
@@ -29,7 +29,7 @@ Creates a new consumer that will be able to make reservations.
 
 ### HTTP Request
 
-`POST "https://api-letom.herokuapp.com/v1/consumer/consumers"`
+`POST "https://letom-st.herokuapp.com/v1/consumer/consumers"`
 
 ### URL Parameters
 

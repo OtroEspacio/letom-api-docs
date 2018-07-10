@@ -3,8 +3,8 @@
 ## Get a Consumer's Reservations
 
 ```shell
-curl "https://api-letom.herokuapp.com/v1/consumer/reservations/?email=someemail@address.com"
-  -H "Authorization: meowmeowmeow"
+curl "https://letom-st.herokuapp.com/v1/consumer/reservations/?email=someemail@address.com"
+  -H "Authorization: SUPER-COOL-ACCESS-TOKEN"
   -H "Accept: application/vnd.letom.v1"
 ```
 
@@ -43,7 +43,7 @@ Get a consumer's all reservations made in Letom. The reservation includes the ro
 
 ### HTTP Request
 
-`GET "https://api-letom.herokuapp.com/v1/consumer/reservations/?email=<CONSUMER-EMAIL-ADDRESS>"`
+`GET "https://letom-st.herokuapp.com/v1/consumer/reservations/?email=<CONSUMER-EMAIL-ADDRESS>"`
 
 ### URL Parameters
 
@@ -55,8 +55,8 @@ email (*string*)| The email address of the current consumer
 ## Create a Reservation
 
 ```shell
-curl -X POST "https://api-letom.herokuapp.com/v1/consumer/reservations"
-  -H "Authorization: meowmeowmeow"
+curl -X POST "https://letom-st.herokuapp.com/v1/consumer/reservations"
+  -H "Authorization: SUPER-COOL-ACCESS-TOKEN"
   -H "Accept: application/vnd.letom.v1"
   -d '{ "reservation": {
         "room_type_id": 5,
@@ -96,7 +96,7 @@ This endpoint creates a reservation for the current user. The resulting JSON giv
 
 ### HTTP Request
 
-`POST https://api-letom.herokuapp.com/v1/consumer/reservations/`
+`POST https://letom-st.herokuapp.com/v1/consumer/reservations/`
 
 ### Request Parameters
 
@@ -110,8 +110,8 @@ email (*string*) | The current user's email address
 ## Get Last User's Reservation
 
 ```shell
-curl "https://api-letom.herokuapp.com/v1/consumer/reservations/last/?email=someemail@address.com"
-  -H "Authorization: meowmeowmeow"
+curl "https://letom-st.herokuapp.com/v1/consumer/reservations/last/?email=someemail@address.com"
+  -H "Authorization: SUPER-COOL-ACCESS-TOKEN"
   -H "Accept: application/vnd.letom.v1"
 ```
 
@@ -143,7 +143,7 @@ Get the current user's last reservation. The reservation includes the room type 
 
 ### HTTP Request
 
-`GET "https://api-letom.herokuapp.com/v1/consumer/reservations/last/?email=<CONSUMER-EMAIL-ADDRESS>"`
+`GET "https://letom-st.herokuapp.com/v1/consumer/reservations/last/?email=<CONSUMER-EMAIL-ADDRESS>"`
 
 ### URL Parameters
 
@@ -155,8 +155,8 @@ email (*string*) | The email address of the current consumer
 ## Cancel a Reservation
 
 ```shell
-curl -X PUT "https://api-letom.herokuapp.com/v1/consumer/reservations/?email=someemail@address.com"
-  -H "Authorization: meowmeowmeow"
+curl -X PUT "https://letom-st.herokuapp.com/v1/consumer/reservations/?email=someemail@address.com"
+  -H "Authorization: SUPER-COOL-ACCESS-TOKEN"
   -H "Accept: application/vnd.letom.v1"
 ```
 
@@ -188,7 +188,7 @@ This endpoint finds and cancels the most recent pending reservation a user has m
 
 ### HTTP Request
 
-`PUT "https://api-letom.herokuapp.com/v1/consumer/reservations/cancel/?email=<CONSUMER-EMAIL-ADDRESS>"`
+`PUT "https://letom-st.herokuapp.com/v1/consumer/reservations/cancel/?email=<CONSUMER-EMAIL-ADDRESS>"`
 
 ### URL Parameters
 

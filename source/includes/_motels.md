@@ -3,8 +3,8 @@
 ## Get All Motels
 
 ```shell
-curl "https://api-letom.herokuapp.com/v1/consumer/motels"
-  -H "Authorization: meowmeowmeow"
+curl "https://letom-st.herokuapp.com/v1/consumer/motels"
+  -H "Authorization: SUPER-COOL-ACCESS-TOKEN"
   -H "Accept: application/vnd.letom.v1"
 ```
 
@@ -39,13 +39,13 @@ This endpoint retrieves all available letoms.
 
 ### HTTP Request
 
-`GET https://api-letom.herokuapp.com/v1/consumer/motels`
+`GET https://letom-st.herokuapp.com/v1/consumer/motels`
 
 ## Get a Specific Letom
 
 ```shell
-curl "https://api-letom.herokuapp.com/v1/consumer/motels/1"
-  -H "Authorization: meowmeowmeow"
+curl "https://letom-st.herokuapp.com/v1/consumer/motels/1"
+  -H "Authorization: SUPER-COOL-ACCESS-TOKEN"
   -H "Accept: application/vnd.letom.v1"
 ```
 
@@ -84,7 +84,7 @@ This endpoint retrieves a specific letom and its `RoomTypes`.
 
 ### HTTP Request
 
-`GET https://api-letom.herokuapp.com/v1/consumer/motels/<ID>`
+`GET https://letom-st.herokuapp.com/v1/consumer/motels/<ID>`
 
 ### URL Parameters
 
